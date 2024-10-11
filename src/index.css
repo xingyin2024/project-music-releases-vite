@@ -1,6 +1,7 @@
 /* General Styles */
-.App {
+body {
   margin: 0;
+  padding: 0;
   font-family: Helvetica, Arial, sans-serif;
   background-color: #292929;
   color: #ffffff;
@@ -41,7 +42,21 @@ footer {
   gap: 20px;
   padding: 20px;
   grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+
+  /* Responsive Grid Layout */
+  @media (min-width: 1024px) {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  @media (min-width: 768px) and (max-width: 1023px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (max-width: 767px) {
+    grid-template-columns: repeat(1, 1fr);
+  }
 }
+
 
 /* Album Card Styles */
 .album-card {
@@ -131,25 +146,6 @@ footer {
 
 /* Icon Styling */
 .playIcon, .heartIcon, .dotsIcon {
-  width: 40px;
-  height: 40px;
-}
-
-/* Responsive Grid Layout */
-@media (min-width: 1024px) {
-  .album-container {
-    grid-template-columns: repeat(4, 1fr);
-  }
-}
-
-@media (min-width: 768px) and (max-width: 1023px) {
-  .album-container {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (max-width: 767px) {
-  .album-container {
-    grid-template-columns: repeat(1, 1fr);
-  }
+  width: 50px;
+  height: 50px;
 }
